@@ -1,0 +1,17 @@
+{
+  "name": "null",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "prettier --ignore-path .gitignore -w .",
+    "start": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "csv-parse": "^5.4.0",
+    "prettier": "^2.8.8",
+    "vitepress": "~1.0.0-beta.2"
+  }
+}
