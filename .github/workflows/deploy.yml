@@ -4,7 +4,7 @@ on:
     branches: main
     paths-ignore:
       - .github/**
-      - "!.github/workflows/deploy-docs.yml"
+      - "!.github/workflows/deploy.yml"
       - .gitignore
       - LICENSE
       - README.md
