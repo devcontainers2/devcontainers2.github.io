@@ -1,0 +1,40 @@
+<footer class="footer">
+    <script>
+        function manageConsent() {
+            if (WcpConsent.siteConsent.isConsentRequired) {
+                WcpConsent.siteConsent.manageConsent();
+            }
+        }
+    </script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10">
+                <ul class="links">
+                    <li>
+                        <a class="github-button" href="https://github.com/devcontainers/spec" data-icon="octicon-star" data-show-count="true" aria-label="Star devcontainers/spec on GitHub">Star</a>
+                    </li>
+                    <li>
+                        <a class="github-button" href="https://github.com/devcontainers/spec/subscription" aria-label="Watch devcontainers/spec on GitHub">Watch</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <ul class="links">
+                    <li style="display: none;" >
+                        <a id="footer-cookie-link" style="cursor: pointer; padding-right:20px" onclick="manageConsent()"
+                            aria-label="Manage cookies">Manage cookies</a>
+                    </li>
+                    <li>
+                        <div class="copyright">
+                            <a id="footer-microsoft-link" class="logo" href="https://www.microsoft.com">
+                                <img src="{{site.baseurl}}/img/microsoft-logo-inverted.png" height="20" alt="Microsoft">
+                            </a>
+                            <span>© 2022 Microsoft</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
