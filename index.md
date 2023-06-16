@@ -49,7 +49,7 @@ import HomeContent from '.vitepress/theme/components/HomeContent.vue';
 
 ## What are Development Containers?
 
-<img align="right" style="padding: 0.66em;" alt="Example devcontainer configuration" src="/example-devcontainerjson.png" />
+<img align="right" style="padding: 0.66em;" alt="Example devcontainer configuration" src="assets/example-devcontainerjson.png" />
 
 A Development Container (or Dev Container for short) allows you to use a
 container as a full-featured development environment. It can be used to run an

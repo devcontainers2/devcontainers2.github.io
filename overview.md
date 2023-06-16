@@ -33,7 +33,7 @@ deployment image that you use during development.
 
 <div align="center">
 
-![Diagram of inner and outer loop of container-based development](img/dev-container-stages.png)
+![Diagram of inner and outer loop of container-based development](assets/dev-container-stages.png)
 
 </div>
 
