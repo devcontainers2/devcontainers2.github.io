@@ -4,8 +4,8 @@ Collections on this list are continuously crawled for liveness, and can be
 presented in UX of Dev Container-supporting tools (i.e. it will be presented in
 the GitHub Codespaces and VS Code Dev Containers UX).
 
-To add your own collection to this list, please create a PR editing [this csv
-file].
+To add your own collection to this list, just open a new Issue using [this
+form].
 
 <script setup>
 // https://vitepress.dev/guide/data-loading
@@ -30,3 +30,8 @@ import { data as CollectionIndex } from "./collection-index.data.ts";
     </tr>
   </tbody>
 </table>
+
+🙌 Have your own Dev Container feature or template? [Fill out this form!]
+
+<!-- prettier-ignore-start -->
+[Fill out this form!]: 

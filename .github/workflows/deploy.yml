@@ -30,14 +30,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
-      - run: npm ci
+      - run: cd test && npm ci
       - id: configure-pages
         uses: actions/configure-pages@v3
-      - run: npm run build
+      - run: cd test && npm run docs:build
         env:
           BASE_URL: ${{ steps.configure-pages.outputs.base_url }}/
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: .vitepress/dist
+          path: test/.vitepress/dist
       - id: deploy-pages
         uses: actions/deploy-pages@v2
