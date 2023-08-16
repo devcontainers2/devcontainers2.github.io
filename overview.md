@@ -31,11 +31,9 @@ application before you are ready to deploy. While deployment and development
 containers may resemble one another, you may not want to include tools in a
 deployment image that you use during development.
 
-<div align="center">
-
-![Diagram of inner and outer loop of container-based development](./assets/dev-container-stages.png)
-
-</div>
+<p align="center">
+  <img src="./assets/dev-container-stages.png">
+</p>
 
 ### Build and test
 
