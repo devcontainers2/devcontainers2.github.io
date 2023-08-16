@@ -36,6 +36,10 @@ export default defineConfig({
 
     footer: {
       copyright: 'Copyright &copy; 2022 Microsoft'
+    },
+
+    search: {
+      provider: 'local'
     }
   },
 });

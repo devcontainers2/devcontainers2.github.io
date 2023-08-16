@@ -1,21 +1,19 @@
-name: Deploy
+name: Deploy GitHub Pages
 on:
   push:
-    branches: main
+    branches: "main"
     paths-ignore:
-      - .github/**
-      - "!.github/workflows/deploy.yml"
       - .gitignore
       - LICENSE
       - README.md
-  schedule:
-    - cron: '0 0 * * *'
+      - .github/**
+      - "!.github/workflows/deploy-github-pages.yml"
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 jobs:
-  deploy:
+  deploy-github-pages:
     permissions:
       contents: read
       id-token: write
@@ -30,14 +28,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: npm
-      - run: cd test && npm ci
+          node-version: "20"
+      - run: npm ci
       - id: configure-pages
         uses: actions/configure-pages@v3
-      - run: cd test && npm run docs:build
+      - run: npm run build
         env:
           BASE_URL: ${{ steps.configure-pages.outputs.base_url }}/
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v2
         with:
-          path: test/.vitepress/dist
+          path: .vitepress/dist
       - id: deploy-pages
         uses: actions/deploy-pages@v2
