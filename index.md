@@ -21,11 +21,11 @@ features:
     details:
       Learn more about how Development Containers work and the specification
   - icon: 📕
-    title: <a href="/spec/">Specification</a>
+    title: <a href="https://devcontainers.org/spec/">Specification</a>
     details: Check the latest updates to the reference implementation
   - icon: 🔀
     title: <a href="/supporting-tools">Supporting tools</a>
-    details: Explore other software and services that support this standard!
+    details: Explore other software and services that support this standard
 ---
 
 <style>
