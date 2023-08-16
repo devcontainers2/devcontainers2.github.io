@@ -21,7 +21,7 @@ features:
     title: <a href="/overview">Overview</a>
     details: Learn more about how Development Containers work and the specification
   - icon: 📕
-    title: <a href="https://devcontainers.org/spec/" target="_self">Specification</a>
+    title: <a href="https://devcontainers.org/spec/" target="_top">Specification</a>
     details: Check the latest updates to the reference implementation
   - icon: 🔀
     title: <a href="/supporting-tools">Supporting tools</a>
@@ -40,11 +40,6 @@ features:
   color: var(--vp-c-brand-dark);
 }
 </style>
-<script client>
-// Makes the "Specification" "actions" link NOT open in a new tab.
-const a = document.querySelector('a[href="https://devcontainers.org/spec/"][target=_blank]')
-a.target = '_self'
-</script>
 
 <!-- https://github.com/vuejs/vitepress/issues/800 -->
 <script setup>
