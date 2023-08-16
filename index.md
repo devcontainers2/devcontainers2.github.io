@@ -12,8 +12,8 @@ hero:
       text: Get Started
       link: /getting-started
     - theme: alt
-      text: Specification
-      link: https://devcontainers.org/spec/
+      text: GitHub
+      link: https://github.com/devcontainers
 
 # prettier-ignore
 features:
@@ -21,7 +21,7 @@ features:
     title: <a href="/overview">Overview</a>
     details: Learn more about how Development Containers work and the specification
   - icon: 📕
-    title: <a href="https://devcontainers.org/spec/" target="_top">Specification</a>
+    title: <a href="https://devcontainers.org/spec/" rel=external>Specification</a>
     details: Check the latest updates to the reference implementation
   - icon: 🔀
     title: <a href="/supporting-tools">Supporting tools</a>
@@ -29,7 +29,7 @@ features:
 ---
 
 <style>
-/* Makes the <a> tags have style, not be invisible */
+/* Makes the <a> tags in "features" have style, not be invisible */
 .VPFeature .title a {
   font-weight: 700;
   color: var(--vp-c-brand);
