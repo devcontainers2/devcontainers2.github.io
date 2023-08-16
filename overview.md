@@ -57,9 +57,9 @@ You can [learn more][def7] about how other tools and services support the
 Development Container Specification.
 
 [def]: https://microsoft.github.io/language-server-protocol/
-[def2]: implementors/json_reference
-[def3]: ../implementors/spec/#image-metadata
-[def4]: ../features
-[def5]: https://github.com/devcontainers/cli
-[def6]: https://github.com/devcontainers/ci
-[def7]: /supporting.md
+[def2]: #
+[def3]: #
+[def4]: #
+[def5]: #
+[def6]: #
+[def7]: #
