@@ -21,7 +21,7 @@ features:
     title: <a href="/overview">Overview</a>
     details: Learn more about how Development Containers work and the specification
   - icon: 📕
-    title: <a href="https://devcontainers.org/spec/" rel=external>Specification</a>
+    title: <a href="https://devcontainers.org/spec/">Specification</a>
     details: Check the latest updates to the reference implementation
   - icon: 🔀
     title: <a href="/supporting-tools">Supporting tools</a>
