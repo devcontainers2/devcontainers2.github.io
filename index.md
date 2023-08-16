@@ -13,7 +13,7 @@ hero:
       link: /getting-started
     - theme: alt
       text: Specification
-      link: /spec/
+      link: https://devcontainers.org/spec/
 
 features:
   - icon: ⚙️
