@@ -9,6 +9,10 @@ export default defineConfig({
     },
   },
 
+  // https://vitepress.dev/guide/mpa-mode
+  // ⚠️ EXPERIMENTAL! This means a FULL RELOAD on each navigation.
+  mpa: true,
+
   srcExclude: ["README.md"],
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
 
