@@ -12,6 +12,9 @@ export default defineConfig({
   // https://vitepress.dev/guide/mpa-mode
   // ⚠️ EXPERIMENTAL! This means a FULL RELOAD on each navigation.
   mpa: true,
+  // 👆 This is useful because forcing a FULL PAGE LOAD is helpful when some of
+  // this site's pages are not indexed by Vitepress at build time (like /spec/)
+  // and thus would fake-404 in a client-side router.
 
   srcExclude: ["README.md"],
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],

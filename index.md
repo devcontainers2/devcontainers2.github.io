@@ -15,11 +15,10 @@ hero:
       text: GitHub
       link: https://github.com/devcontainers
 
-# prettier-ignore
 features:
   - icon: ⚙️
     title: <a href="/overview">Overview</a>
-    details: Learn more about how Development Containers work and the specification
+    details: Learn more about how Development Containers work
   - icon: 📕
     title: <a href="https://devcontainers.org/spec/">Specification</a>
     details: Check the latest updates to the reference implementation
