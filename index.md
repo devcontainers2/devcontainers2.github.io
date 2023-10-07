@@ -9,46 +9,43 @@ hero:
     content and settings
   actions:
     - theme: brand
-      text: Get Started
-      link: /getting-started
+      text: Get started
+      link: /guides/getting-started
     - theme: alt
-      text: GitHub
-      link: https://github.com/devcontainers
+      text: Marketplace
+      link: /marketplace
+  image:
+    src: /hero.png
 
 features:
-  - icon: ⚙️
-    title: <a href="/overview">Overview</a>
-    details: Learn more about how Development Containers work
-  - icon: 📕
-    title: <a href="https://devcontainers.org/spec/">Specification</a>
-    details: Check the latest updates to the reference implementation
-  - icon: 🔀
-    title: <a href="/supporting-tools">Supporting tools</a>
-    details: Explore other software and services that support this standard
+  - icon:
+      src: /json-icon.svg
+    title: Configuration as JSON
+    details:
+      Stop wasting time wrangling Docker images. Quickly manage and configure
+      your Dev Containers with JSON. Dev environments as code couldn’t be
+      easier—or faster.
+    link: /reference/devcontainer-json
+    linkText: devcontainer.json reference
+  - icon: 💻
+    title: Works with your favorite tools
+    details:
+      We've collaborated with VS Code, GitHub Codespaces, Jupyter, and JetBrains
+      so you can use your devcontainer.json environment anywhere.
+    link: /supporting-tools
+    linkText: See supporting tools
 ---
 
-<style>
-/* Makes the <a> tags in "features" have style, not be invisible */
-.VPFeature .title a {
-  font-weight: 700;
-  color: var(--vp-c-brand);
-  border-bottom: 1px solid currentColor;
-  transition: color 0.25s;
-}
-.VPFeature .title a:hover {
-  color: var(--vp-c-brand-dark);
-}
-</style>
-
-<!-- https://github.com/vuejs/vitepress/issues/800 -->
 <script setup>
+// https://github.com/vuejs/vitepress/issues/800
 import HomeContent from '.vitepress/theme/components/HomeContent.vue';
 </script>
+
 <HomeContent>
 
 ## What are Development Containers?
 
-<img align="right" style="padding: 0.66em;" alt="Example devcontainer configuration" src="./assets/example-devcontainerjson.png" />
+<img align="right" style="padding: 0.66em;" alt="Example devcontainer configuration" src="/example-devcontainer-json.png" />
 
 A Development Container (or Dev Container for short) allows you to use a
 container as a full-featured development environment. It can be used to run an
