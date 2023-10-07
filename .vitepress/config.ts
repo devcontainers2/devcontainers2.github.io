@@ -102,7 +102,7 @@ export default defineConfig({
     // https://github.com/vuejs/vitepress/issues/1037
     footer: {
       message:
-        'Released under the <a href="https://github.com/jcbhmr/cmakebyexample.dev/blob/main/LICENSE">CC-BY-4.0 License</a>.',
+        'Released under the <a href="https://github.com/devcontainers2/devcontainers2.github.io/blob/main/LICENSE">CC-BY-4.0 License</a>.',
       copyright:
         'Copyright © 2023 <a href="https://microsoft.com/">Microsoft</a>',
     },
