@@ -32,6 +32,17 @@ features:
 import HomeContent from '.vitepress/theme/components/HomeContent.vue';
 import TwoCols from ".vitepress/theme/components/TwoCols.vue"
 import { VPButton } from "vitepress/theme"
+
+// This is a hack to make the 'Marketplace' link not open a new tab.
+if (globalThis.window) {
+  // TODO: 'requestAnimationFrame' vs 'setTimeout' vs an event?
+  // TODO: Open a feature request on the VitePress GitHub page
+  requestAnimationFrame(() => {
+    const a = document.querySelector(`.VPButton[href="https://devcontainers.org/marketplace/"]`)
+    console.log(a, document.readyState)
+    a.target = "_self"
+  })
+}
 </script>
 
 <HomeContent>
