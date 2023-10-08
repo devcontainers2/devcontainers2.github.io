@@ -12,7 +12,7 @@ hero:
       link: /guide/
     - theme: alt
       text: Marketplace
-      link: /marketplace
+      link: https://devcontainers.org/marketplace/
   image:
     src: /hero.png
 
