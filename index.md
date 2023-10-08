@@ -4,8 +4,7 @@ layout: home
 
 hero:
   name: "Development containers"
-  tagline:
-    Specification & tooling for composable and reproducable development
+  tagline: Specification & tooling for composable and reproducable development
     environments
   actions:
     - theme: brand
