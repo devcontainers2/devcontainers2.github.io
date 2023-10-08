@@ -1,16 +1,33 @@
-For simple use cases you can use your development container (dev container) for CI without much issue. Once you begin using more advanced dev container functionality such as [Features](/features), you will need dev container tooling in your CI pipeline. While GitHub CI has the [devcontainers-ci GitHub Action](https://github.com/marketplace/actions/devcontainers-ci), there is no such analog in GitLab CI. To achieve the goal of using your dev container in GitLab CI, the container must be pre-built.
+For simple use cases you can use your development container (dev container) for
+CI without much issue. Once you begin using more advanced dev container
+functionality such as [Features](/features), you will need dev container tooling
+in your CI pipeline. While GitHub CI has the
+[devcontainers-ci GitHub Action](https://github.com/marketplace/actions/devcontainers-ci),
+there is no such analog in GitLab CI. To achieve the goal of using your dev
+container in GitLab CI, the container must be pre-built.
 
-This document will guide you on how to build a dev container with GitLab CI, push that dev container to the GitLab Container Registry, and finally reference that dev container in your main project for both local development and GitLab CI.
+This document will guide you on how to build a dev container with GitLab CI,
+push that dev container to the GitLab Container Registry, and finally reference
+that dev container in your main project for both local development and GitLab
+CI.
 
-For the purpose of this document, we will assume the main project is named `my-project` and lives under the `my-user` path. The example here uses a few [Features](/features), which is what forces the container to be pre-built.
+For the purpose of this document, we will assume the main project is named
+`my-project` and lives under the `my-user` path. The example here uses a few
+[Features](/features), which is what forces the container to be pre-built.
 
 ## <a href="#dev-container-project" name="dev-container-project" class="anchor">The Development Container GitLab project</a>
 
-Create a project in GitLab where the stand-alone dev container project will live. As the main project is assumed to be named `my-project`, let's assume the dev container project name will be `my-project-dev-container`
+Create a project in GitLab where the stand-alone dev container project will
+live. As the main project is assumed to be named `my-project`, let's assume the
+dev container project name will be `my-project-dev-container`
 
 ### <a href="#dev-container-json" name="dev-container-json" class="anchor">Development Container .devcontainer/devcontainer.json</a>
 
-The example here is a CDK project for Python makes use of both the [AWS CLI](https://github.com/devcontainers/features/tree/main/src/aws-cli) and the community-maintained [AWS CDK](http://github.com/devcontainers-contrib/features/tree/main/src/aws-cdk) Features.
+The example here is a CDK project for Python makes use of both the
+[AWS CLI](https://github.com/devcontainers/features/tree/main/src/aws-cli) and
+the community-maintained
+[AWS CDK](http://github.com/devcontainers-contrib/features/tree/main/src/aws-cdk)
+Features.
 
 `.devcontainer/devcontainer.json`:
 
@@ -36,7 +53,9 @@ The example here is a CDK project for Python makes use of both the [AWS CLI](htt
 
 ### <a href="#dev-container-dockerfile" name="dev-container-dockerfile" class="anchor">Development Container Dockerfile</a>
 
-As this is a Python project working with CDK, the `Dockerfile` will begin by using the latest Python dev container image and then install some basic packages via `pip`.
+As this is a Python project working with CDK, the `Dockerfile` will begin by
+using the latest Python dev container image and then install some basic packages
+via `pip`.
 
 `Dockerfile`:
 
@@ -49,7 +68,9 @@ RUN pip3 --disable-pip-version-check --no-cache-dir install aws_cdk_lib construc
 
 ### <a href="#dev-container-gitlab-ci" name="dev-container-gitlab-ci" class="anchor">Development Container .gitlab-ci.yml</a>
 
-Since there is no GitLab CI equivalent to [devcontainers-ci GitHub Action](https://github.com/marketplace/actions/devcontainers-ci), we will need to install the devcontainers CLI manually. The following will:
+Since there is no GitLab CI equivalent to
+[devcontainers-ci GitHub Action](https://github.com/marketplace/actions/devcontainers-ci),
+we will need to install the devcontainers CLI manually. The following will:
 
 1. Install the packages that the devcontainers CLI requires
 2. Install the devcontainers CLI itself
@@ -75,7 +96,8 @@ build:
   stage: build
   script:
     - docker login -u gitlab-ci-token -p ${CI_JOB_TOKEN} ${CI_REGISTRY}
-    - devcontainer build --workspace-folder . --push true --image-name ${CI_REGISTRY_IMAGE}:latest
+    - devcontainer build --workspace-folder . --push true --image-name
+      ${CI_REGISTRY_IMAGE}:latest
 ```
 
 ## <a href="#main-project" name="main-project" class="anchor">The Main GitLab project</a>
@@ -92,7 +114,9 @@ build:
 
 ### <a href="#main-project-gitlab-ci-json" name="main-project-gitlab-ci-json" class="anchor">Main .gitlab.ci.yml</a>
 
-Assuming the dev container project name is based off the main project name, the `${CI_REGISTRY_NAME}` variable can be used. This configuration performs some basic sanity checks and linting once merge requests are submitted.
+Assuming the dev container project name is based off the main project name, the
+`${CI_REGISTRY_NAME}` variable can be used. This configuration performs some
+basic sanity checks and linting once merge requests are submitted.
 
 `.gitlab-ci.json`:
 
@@ -138,6 +162,10 @@ Black code format:
 
 ## <a href="#conclusion" name="conclusion" class="anchor">Conclusion</a>
 
-It's worth noting that the best practice would be to pin the versions of the various packages installed by `pip`, `apk`, `npm` and the like. Version pinning was omitted from this guide so that it can be executed as-is without issue.
+It's worth noting that the best practice would be to pin the versions of the
+various packages installed by `pip`, `apk`, `npm` and the like. Version pinning
+was omitted from this guide so that it can be executed as-is without issue.
 
-The above provides a starting point for a dev container that's used for both local development and in GitLab CI. It can easily be customized for other languages and tool chains. Take it and make it your own, happy coding!
+The above provides a starting point for a dev container that's used for both
+local development and in GitLab CI. It can easily be customized for other
+languages and tool chains. Take it and make it your own, happy coding!

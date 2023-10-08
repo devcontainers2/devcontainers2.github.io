@@ -151,6 +151,12 @@
 
 /* We don't want to show the little '↗' arrow on our in-domain links even if
    they are absolute. '/hello' vs 'https://example.com/hello' should be same. */
-.vp-external-link-icon[href^="https://devcontainers.org/"]::after {
+.vp-external-link-icon[href^="https://devcontainers.org/"]::after
+{
   display: none !important;
+}
+
+/* By default the '.vp-doc a' selector overrides the '<VPButton>' styles. */
+.vp-doc a.VPButton {
+  text-decoration: unset;
 }

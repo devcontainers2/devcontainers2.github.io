@@ -32,7 +32,7 @@ containers may resemble one another, you may not want to include tools in a
 deployment image that you use during development.
 
 <p align="center">
-  <img src="./assets/dev-container-stages.png">
+  <img src="https://i.imgur.com/JX7pIdn.png">
 </p>
 
 ### Build and test
