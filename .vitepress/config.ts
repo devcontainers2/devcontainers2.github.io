@@ -65,9 +65,21 @@ export default defineConfig({
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/" },
       { text: "Reference", link: "/reference/" },
-      { text: "Marketplace", link: "https://devcontainers.org/marketplace/" },
-      { text: "devctl", link: "https://devcontainers.org/devctl/" },
-      { text: "Specification", link: "https://devcontainers.org/spec/" },
+      {
+        text: "Marketplace",
+        link: "https://devcontainers.org/marketplace/",
+        target: "_self",
+      },
+      {
+        text: "devctl",
+        link: "https://devcontainers.org/devctl/",
+        target: "_self",
+      },
+      {
+        text: "Specification",
+        link: "https://devcontainers.org/spec/",
+        target: "_self",
+      },
     ],
 
     // https://vitepress.dev/reference/default-theme-config#sidebar
