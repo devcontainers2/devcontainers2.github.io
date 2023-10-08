@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Get started
-      link: /guides/getting-started
+      link: "#getting-started"
     - theme: alt
       text: Marketplace
       link: /marketplace
@@ -39,26 +39,54 @@ features:
 <script setup>
 // https://github.com/vuejs/vitepress/issues/800
 import HomeContent from '.vitepress/theme/components/HomeContent.vue';
+import TwoCols from ".vitepress/theme/components/TwoCols.vue"
 </script>
 
 <HomeContent>
 
-## What are Development Containers?
+# Getting started <Badge type="info" text="GitHub Codespaces" />
 
-<img align="right" style="padding: 0.66em;" alt="Example devcontainer configuration" src="/example-devcontainer-json.png" />
+DevContainers are a powerful tool for creating consistent development environments for your projects. GitHub Codespaces provides an easy and seamless way to get started with DevContainers. In this guide, we'll walk you through the steps to set up your development environment quickly.
 
-A Development Container (or Dev Container for short) allows you to use a
-container as a full-featured development environment. It can be used to run an
-application, to separate tools, libraries, or runtimes needed for working with a
-codebase, and to aid in continuous integration and testing. Dev containers can
-be run locally or remotely, in a private or public cloud.
+## Step 1: Create a New GitHub Repository
 
-The Development Containers Specification seeks to find ways to enrich existing
-formats with common development specific settings, tools, and configuration
-while still providing a simplified, un-orchestrated single container option – so
-that they can be used as coding environments or for continuous integration and
-testing. Beyond the specification's core metadata, the spec also enables
-developers to quickly share and reuse container setup steps through Dev
-Container Features and Templates.
+To begin, create a new GitHub repository where you plan to store your project's source code. If you already have a repository, you can skip this step and use your existing one.
+
+## Step 2: Create a `.devcontainer/devcontainer.json` File
+
+<TwoCols>
+<div>
+
+Next, you'll need to create a `.devcontainer` directory at the root of your repository if it doesn't already exist. Inside this directory, create a file named `devcontainer.json`. This JSON file is where you'll define the configuration for your DevContainer.
+
+- `"name"`: Give your DevContainer a meaningful name.
+- `"image"`: Specify the Docker image you want to use for your development environment. In this example, we're using the Ubuntu image as the base.
+- `"features"`: Define the features you want to include in your DevContainer. Here, we're using a Node.js feature from GitHub Container Registry (ghcr.io).
+
+</div><div>
+
+```json
+{
+  "name": "My Node.js DevContainer",
+  "image": "ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node": {}
+  }
+}
+```
+
+</div>
+</TwoCols>
+
+## Step 3: Click "Open in Codespaces" on GitHub
+
+Once you've defined your DevContainer configuration, navigate to your GitHub repository and click the "Code" button. In the dropdown menu, select "Open with Codespaces." This will automatically create a Codespace using the configuration you specified in the `devcontainer.json` file.
+
+![Open in Codespaces](https://placekitten.com/600/400)
+
+GitHub Codespaces will set up your development environment in the cloud, using the Ubuntu base image and including the Node.js feature from GitHub Container Registry. You'll have instant access to a consistent development environment with all the tools and extensions you need.
+
+That's it! You're now ready to start developing in your DevContainer using GitHub Codespaces. Happy coding!
+
 
 </HomeContent>

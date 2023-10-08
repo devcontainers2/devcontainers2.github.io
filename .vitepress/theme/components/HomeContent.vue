@@ -10,6 +10,7 @@
   width: 100%;
   max-width: 1280px;
   padding: 0 24px;
+  margin-top: 4em;
 }
 
 @media (min-width: 640px) {

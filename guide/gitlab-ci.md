@@ -1,10 +1,3 @@
----
-layout: post
-title: "Working with GitLab CI"
-author: "@raginjason"
-authorUrl: https://github.com/raginjason
----
-
 For simple use cases you can use your development container (dev container) for CI without much issue. Once you begin using more advanced dev container functionality such as [Features](/features), you will need dev container tooling in your CI pipeline. While GitHub CI has the [devcontainers-ci GitHub Action](https://github.com/marketplace/actions/devcontainers-ci), there is no such analog in GitLab CI. To achieve the goal of using your dev container in GitLab CI, the container must be pre-built.
 
 This document will guide you on how to build a dev container with GitLab CI, push that dev container to the GitLab Container Registry, and finally reference that dev container in your main project for both local development and GitLab CI.

@@ -63,27 +63,36 @@ export default defineConfig({
 
     nav: [
       { text: "Home", link: "/" },
-      { text: "Getting started", link: "/getting-started" },
+      { text: "Guide", link: "/guide/create-a-feature" },
+      { text: "Reference", link: "/reference/devcontainer-json" },
       { text: "Marketplace", link: "https://devcontainers.org/marketplace/" },
       { text: "devctl", link: "https://devcontainers.org/devctl/" },
       {
         text: "Specification",
         link: "https://devcontainers.org/development-containers/",
       },
+      { text: "Blog", link: "https://devcontainers.org/blog/", }
     ],
 
     // https://vitepress.dev/reference/default-theme-config#sidebar
     sidebar: [
-      { text: "Getting started", link: "/getting-started" },
       {
         text: "Guides",
         items: [
-          { text: "Create a feature", link: "/guides/create-a-feature" },
-          { test: "Use a Dockerfile", link: "/guides/use-dockerfile" },
-          { text: "Use in GitHub Actions", link: "/guides/github-actions" },
-          { test: "Use in GitLab CI", link: "/guides/gitlab-ci" },
+          { text: "Use a Dockerfile", link: "/guide/use-dockerfile" },
+          { text: "Use docker-compose.yml", link: "/guide/use-docker-compose" },
+          { text: "Use in GitHub Actions", link: "/guide/github-actions" },
+          { text: "Use in GitLab CI", link: "/guide/gitlab-ci" },
+          { text: "Use with GitHub Codespaces",  link: "/guide/codespaces" },
+          { text: "Use with VS Code", link: "/guide/vscode" },
+          { text: "Use with Visual Studio", link: "/guide/use-vs" },
+          { text: "Create a feature", link: "/guide/create-feature" },
+          { text: "Create a feature collection", link: "/guide/create-feature-collection" },
+          { text: "Create a template", link: "/guide/create-template" },
+          { text: "Create a template collection", link: "/guide/create-template-collection" },
         ],
       },
+      { text: "About", link: "/about" }
     ],
 
     socialLinks: [

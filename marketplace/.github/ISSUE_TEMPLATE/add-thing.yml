@@ -1,0 +1,22 @@
+name: Add a thing to the Marketplace
+description: Add your feature, template, feature collection, or template collection to the Marketplace index
+title: "Add my thing to the Marketplace"
+labels: ["add-thing"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        [🛍️ View the Marketplace](https://devcontainers.org/marketplace/)
+  - type: input
+    id: thing
+    attributes:
+      label: Thing URL
+      description: "This can be an OCI reference to one of: a feature, a feature collection, a template, or a template collection."
+      placeholder: ghcr.io/octocat/features
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Note that Marketplace entries are checked periodically to ensure that
+        they still exist. If an entry no longer exists, it may be removed.
