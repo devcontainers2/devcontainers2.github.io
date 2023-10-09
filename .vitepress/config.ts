@@ -64,7 +64,6 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Guide", link: "/guide/" },
-      { text: "Reference", link: "/reference/" },
       {
         text: "Marketplace",
         link: "https://devcontainers.org/marketplace/",
